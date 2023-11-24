@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Articles</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__list-item left"><a href="">ArticleStop</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>Top Articles</h1>
+  </header>
+
+  <section class="filter">
+    <h2>Filters</h2>
+    <div class="filter__options">
+      <div class="filter__options-option">
+        <label for="filterArticleTopic">Topic</label>
+        <select name="filterArticleTopic" id="filterArticleTopic" class="filter__options-select">
+          <option value="" selected disabled>Select Top</option>
+          <option value="">Art</option>
+          <option value="">Music</option>
+        </select>
+      </div>
+      <div class="filter__options-option">
+        <label for="filterArticleOrder">Order</label>
+        <select name="filterArticleOrder" id="filterArticleOrder">
+          <option value="" selected disabled>Change Order</option>
+          <option value="">Newest</option>
+          <option value="">Oldest</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section class="results">
+    <h2>Results</h2>
+    <div class="results__container">
+      <div class="results__container-item">
+        <div class="results__container-item--img">
+          <img src="#" alt="">
+        </div>
+        <div class="results__container-item--text">
+          <h3 class="results__container-item--title">Article Title</h3>
+          <p class="results__container-item--description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vitae facere ipsam aperiam nihil libero fuga placeat, dolor ab reprehenderit?</p>
+          <a href="#" class="results__container-item--link">read more...</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

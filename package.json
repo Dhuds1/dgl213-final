@@ -1,0 +1,26 @@
+{
+  "name": "dgl213-final",
+  "version": "1.0.0",
+  "description": "Movie reviews app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhuds1/dgl213-final.git"
+  },
+  "keywords": [
+    "Movie",
+    "review"
+  ],
+  "author": "Eve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dhuds1/dgl213-final/issues"
+  },
+  "homepage": "https://github.com/Dhuds1/dgl213-final#readme",
+  "dependencies": {
+    "eslint": "^8.54.0"
+  }
+}

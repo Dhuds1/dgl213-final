@@ -1,0 +1,28 @@
+$clr-pri: firebrick;
+$clr-sec: #1C1B22;
+$clr-tri: #22B2B2;
+
+@mixin border-radius() {
+   border-radius: 10px;
+}
+
+@mixin center-center() {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin bottom-gradient() {
+   background: rgb(0, 0, 0);
+   background: linear-gradient(0deg,
+         rgba(0, 0, 0, 0.4) 0%,
+         rgba(0, 0, 0, 0.4) 50%,
+         rgba(0, 0, 0, 0.3) 50%,
+         rgba(0, 0, 0, 0) 100%);
+}
+@mixin content-width(){
+   width: 95%;
+}
+@mixin content-inner-spacing(){
+   padding: 1rem;
+}
