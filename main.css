@@ -124,6 +124,7 @@ html {
   background-color: #22B2B2;
   position: sticky;
   top: 0;
+  z-index: 99;
 }
 .nav__list {
   padding: 10px;
