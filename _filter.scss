@@ -5,7 +5,7 @@
    }
    &__options {
       display: flex;
-      gap: 20px;
+      justify-content: space-evenly;
 
       &-option {
          width: 200px;

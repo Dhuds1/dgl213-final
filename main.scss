@@ -55,12 +55,21 @@ header {
    @include content-width;
    @include border-radius;
    @include center-center;
+   @include responsive-min(600px){
+      height: 350px;
+   }
+   @include responsive-min(1000px){
+      height: 450px;
+   }
 }
 section {
-   margin: auto;
-   margin-bottom: 1rem;
    background-color: $clr-pri;
    @include content-width;
-   @include content-inner-spacing;
+   @include content-spacing;
    @include border-radius;
+}
+footer {
+   padding: 2rem;
+   background-color: lighten($clr-sec, 10%);
+   @include center-center;
 }

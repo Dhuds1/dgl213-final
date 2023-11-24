@@ -15,14 +15,35 @@ $clr-tri: #22B2B2;
 @mixin bottom-gradient() {
    background: rgb(0, 0, 0);
    background: linear-gradient(0deg,
-         rgba(0, 0, 0, 0.4) 0%,
-         rgba(0, 0, 0, 0.4) 50%,
-         rgba(0, 0, 0, 0.3) 50%,
+         rgba(0, 0, 0, .7) 0%,
+         rgba(0, 0, 0, 0.6) 50%,
+         rgba(0, 0, 0, 0.35) 50%,
          rgba(0, 0, 0, 0) 100%);
 }
 @mixin content-width(){
    width: 95%;
+   @include responsive-min(1000px){
+      width: 80%;
+   }
 }
-@mixin content-inner-spacing(){
+@mixin content-spacing(){
    padding: 1rem;
+   margin: auto;
+   margin-bottom: 1rem;
+
+   @include responsive-min(1000px){
+      padding: 2rem;
+      margin: auto;
+      margin-bottom: 1rem;
+   }
+}
+@mixin responsive-min($value){
+   @media screen and (min-width: $value) {
+      @content;
+   }
+}
+@mixin responsive-max($value){
+   @media screen and (max-width: $value) {
+      @content;
+   }
 }

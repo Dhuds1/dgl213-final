@@ -4,7 +4,7 @@
 }
 .filter__options {
   display: flex;
-  gap: 20px;
+  justify-content: space-evenly;
 }
 .filter__options-option {
   width: 200px;
@@ -32,6 +32,11 @@
   margin-bottom: 1rem;
   text-align: center;
 }
+@media screen and (min-width: 600px) {
+  .results h2 {
+    text-align: left;
+  }
+}
 .results__container {
   width: 100%;
   display: grid;
@@ -40,9 +45,10 @@
 }
 .results__container-item {
   width: 100%;
-  aspect-ratio: 1;
+  height: 400px;
   background-color: #1C1B22;
   position: relative;
+  overflow: hidden;
   border-radius: 10px;
 }
 .results__container-item--img {
@@ -50,8 +56,22 @@
   height: 100%;
   position: absolute;
   background-color: green;
+}
+.results__container-item--img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0) 100%);
+}
+.results__container-item--img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .results__container-item--text {
   height: 50%;
@@ -72,6 +92,21 @@
 }
 .results__container-item--text a:hover {
   color: #22B2B2;
+}
+@media screen and (min-width: 600px) {
+  .results__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .results__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1300px) {
+  .results__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 * {
@@ -97,6 +132,11 @@ html {
   margin: auto;
   gap: 10px;
   width: 95%;
+}
+@media screen and (min-width: 1000px) {
+  .nav__list {
+    width: 80%;
+  }
 }
 .nav__list-item {
   padding: 10px 20px;
@@ -132,12 +172,47 @@ header {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 1000px) {
+  header {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 600px) {
+  header {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header {
+    height: 450px;
+  }
+}
 
 section {
-  margin: auto;
-  margin-bottom: 1rem;
   background-color: firebrick;
   width: 95%;
   padding: 1rem;
+  margin: auto;
+  margin-bottom: 1rem;
   border-radius: 10px;
+}
+@media screen and (min-width: 1000px) {
+  section {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  section {
+    padding: 2rem;
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+footer {
+  padding: 2rem;
+  background-color: #33323e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
