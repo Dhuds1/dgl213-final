@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Dhuds1/dgl213-final#readme",
   "dependencies": {
+    "@feathersjs/feathers": "^5.0.12",
     "eslint": "^8.54.0"
   }
 }
