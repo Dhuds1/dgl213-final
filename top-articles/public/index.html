@@ -24,82 +24,62 @@
       <div class="filter__options-option">
         <label for="filterArticleTopic">Topic</label>
         <select name="filterArticleTopic" id="filterArticleTopic" class="filter__options-select">
-          <option value="" selected disabled>Select Top</option>
-          <option value="">Art</option>
-          <option value="">Music</option>
+          <option value="home" selected disabled>Select Top</option>
+          <option value="arts">Arts</option>
+          <option value="automobiles">Automobiles</option>
+          <option value="books/review">Books/Review</option>
+          <option value="business">Business</option>
+          <option value="fashion">Fashion</option>
+          <option value="food">Food</option>
+          <option value="health">Health</option>
+          <option value="home">Home</option>
+          <option value="insider">Insider</option>
+          <option value="magazine">Magazine</option>
+          <option value="movies">Movies</option>
+          <option value="nyregion">NY Region</option>
+          <option value="obituaries">Obituaries</option>
+          <option value="opinion">Opinion</option>
+          <option value="politics">Politics</option>
+          <option value="realestate">Real Estate</option>
+          <option value="science">Science</option>
+          <option value="sports">Sports</option>
+          <option value="sundayreview">Sunday Review</option>
+          <option value="technology">Technology</option>
+          <option value="theater">Theater</option>
+          <option value="t-magazine">T Magazine</option>
+          <option value="travel">Travel</option>
+          <option value="upshot">Upshot</option>
+          <option value="us">US</option>
+          <option value="world">World</option>
         </select>
+        
       </div>
       <div class="filter__options-option">
         <label for="filterArticleOrder">Order</label>
         <select name="filterArticleOrder" id="filterArticleOrder">
           <option value="" selected disabled>Change Order</option>
-          <option value="">Newest</option>
-          <option value="">Oldest</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
         </select>
       </div>
     </div>
   </section>
 
   <section class="results">
-    <h2>Results</h2>
-    <div class="results__container">
-      <!-- RESULTS -->
-
-      <div class="results__container-item">
-        <div class="results__container-item--img">
-          <img src="https://picsum.photos/200/300" alt="">
-        </div>
-        <div class="results__container-item--text">
-          <h3 class="results__container-item--title">Article Title</h3>
-          <p class="results__container-item--description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-            vitae facere ipsam aperiam nihil libero fuga placeat, dolor ab reprehenderit?</p>
-          <a href="#" class="results__container-item--link">read more...</a>
-        </div>
-      </div>
-
-      <div class="results__container-item">
-        <div class="results__container-item--img">
-          <img src="https://picsum.photos/200/301" alt="">
-        </div>
-        <div class="results__container-item--text">
-          <h3 class="results__container-item--title">Article Title</h3>
-          <p class="results__container-item--description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-            vitae facere ipsam aperiam nihil libero fuga placeat, dolor ab reprehenderit?</p>
-          <a href="#" class="results__container-item--link">read more...</a>
-        </div>
-      </div>
-      <div class="results__container-item">
-        <div class="results__container-item--img">
-          <img src="https://picsum.photos/200/302" alt="">
-        </div>
-        <div class="results__container-item--text">
-          <h3 class="results__container-item--title">Article Title</h3>
-          <p class="results__container-item--description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-            vitae facere ipsam aperiam nihil libero fuga placeat, dolor ab reprehenderit?</p>
-          <a href="#" class="results__container-item--link">read more...</a>
-        </div>
-      </div>
-
-      <div class="results__container-item">
-        <div class="results__container-item--img">
-          <img src="https://picsum.photos/200/303" alt="">
-        </div>
-        <div class="results__container-item--text">
-          <h3 class="results__container-item--title">Article Title</h3>
-          <p class="results__container-item--description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-            vitae facere ipsam aperiam nihil libero fuga placeat, dolor ab reprehenderit?</p>
-          <a href="#" class="results__container-item--link">read more...</a>
-        </div>
-      </div>
-
-      <!-- END OF RESULTS -->
+    <h2 id="results">Results</h2>
+    <div id="articleContainer" class="results__container">
+      <!-- RESULTS IN HERE-->
     </div>
   </section>
+  <div id="test">
+
+  </div>
   <footer>
     &copy; Eve 2023 | DGL 213 - School Project
   </footer>
   <script src="app.js"></script>
   <script src="requests.js"></script>
+  <script src="print.js"></script>
 </body>
 
 </html>

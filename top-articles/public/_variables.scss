@@ -22,8 +22,8 @@ $clr-tri: #22B2B2;
 }
 @mixin content-width(){
    width: 95%;
-   @include responsive-min(1000px){
-      width: 80%;
+   @include responsive-min(1600px){
+      width: 85%;
    }
 }
 @mixin content-spacing(){
