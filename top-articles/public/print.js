@@ -1,7 +1,9 @@
 function printToPage(articles) {
   let articleWrapper = document.getElementById('articleContainer');
+  articleWrapper.textContent = "";
   let resultTitle = document.getElementById('results');
-  resultTitle.textContent = `${articles.num} results for '${articles.section}'`
+  resultTitle.textContent = `${articles.length} results for '${articles[0].section}'`; // Assuming section is the same for all articles
+
   articles.forEach(data => {
     let wrapper = document.createElement('div');
     wrapper.classList.add('results__container-item');
@@ -10,8 +12,10 @@ function printToPage(articles) {
     imgWrapper.classList.add('results__container-item--img');
 
     let img = document.createElement('img');
-    img.setAttribute('src', data.media.url);
-    img.setAttribute('alt', data.media.alt);
+    if(data.media) {
+      img.setAttribute('src', data.media.url);
+      img.setAttribute('alt', data.media.alt);
+    }
 
     let textWrapper = document.createElement('div');
     textWrapper.classList.add('results__container-item--text');

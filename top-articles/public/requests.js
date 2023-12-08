@@ -3,6 +3,7 @@ let topic;
 
 async function getArticles(topic) {
    try {
+      console.log(topic);
       const response = await fetch(`https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=${APIKEY}`);
       if (!response.ok) {
          throw new Error(`HTTP error! Status: ${response.status}`);
@@ -20,7 +21,7 @@ function cleanSortData(data) {
       let media = article.multimedia?.[0] || false;
       let content = {
          title: article.title,
-         section: article.section,
+         section: data.section,
          abstract: article.abstract,
          media: media ? { url: media.url, alt: media.caption } : null,
          createdDate: article.created_date,
@@ -28,10 +29,6 @@ function cleanSortData(data) {
          byline: article.byline,
          url: article.url,
       };
-      articles += {
-         num: article.num_results,
-         section: article.section,
-      }
       articles.push(content);
    });
    return articles;
