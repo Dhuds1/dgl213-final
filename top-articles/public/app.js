@@ -1,53 +1,62 @@
+let articles;
+let orderByNewest = true;
+
 (() => {
   window.addEventListener('load', (event) => {
-    let articles;
     // Filter Article Topic
     const FAT = document.getElementById('filterArticleTopic');
     // Filter Article Order
     const FAO = document.getElementById('filterArticleOrder');
 
     FAT.addEventListener('change', updateArticleTopic);
-    FAO.addEventListener('change', updateArticleOrder);
+    FAO.addEventListener('change', changeOrder);
 
     async function updateArticleTopic() {
+      // Get users selected topic
       let FATop = FAT.options[FAT.selectedIndex];
       let FATval = FATop.value;
 
-      articles = await getArticles(FATval);
-      console.log(articles);
-      cleanedArticles = await cleanSortData(articles);
-      printToPage(cleanedArticles);
+      // retrieves articles from NYT based on user topic, if none selected "home" by default
+      messyData = await getArticles(FATval);
+      // Reorders retrieved data into an array, keeping needed values
+      articles = await cleanSortData(messyData);
+      // Send to this function to change sorting order
+      updateArticleOrder();
     }
-
-    function updateArticleOrder() {
+    function changeOrder() {
+      // Get input option from user, and change the orderByNewest boolean
       let FAOop = FAO.options[FAO.selectedIndex];
       let FAOval = FAOop.value;
-      console.log(articles);
-
-      // Reorder the arrays based on the sorted order
-      const reorderedArticles = {};
-      sortedArrays.forEach((key) => {
-        reorderedArticles[key] = articles[key];
-      });
-      if ("oldest" == FAOval) {
-        const sortedArrays = Object.keys(articles).sort((a, b) => {
-          const dateA = getFirstCreatedDate(articles[a]);
-          const dateB = getFirstCreatedDate(articles[b]);
-  
-          if (dateA && dateB) {
-            return dateA - dateB;
-          } else {
-            // Handle cases where createdDate is not present or arrays are empty
-            return 0;
-          }
-        });
+      if ("newest" === FAOval) {
+        orderByNewest = true;
       } else {
-        articles.sort((a, b) => {
-          return (b.createdDate) - (a.createdDate);
-        });
+        orderByNewest = false;
       }
-      printToPage(articles);
+      updateArticleOrder();
     }
+    function updateArticleOrder() {
+      if (orderByNewest) {
+        // if orderByNewest === true, display newest article first
+        for (let i = 0; i < articles.length; ++i) {
+          for (let j = i + 1; j < articles.length; ++j) {
+            if (articles[i].createdDate < articles[j].createdDate) {
+              [articles[i], articles[j]] = [articles[j], articles[i]];
+            }
+          }
+        }
+      } else {
+        // if orderByNewest === false, display oldest article first
+        for (let i = 0; i < articles.length; ++i) {
+          for (let j = i + 1; j < articles.length; ++j) {
+            if (articles[i].createdDate > articles[j].createdDate) {
+              [articles[i], articles[j]] = [articles[j], articles[i]];
+            }
+          }
+        }
+      }
+    
+      printToPage(articles);
+    }    
     updateArticleTopic();
   });
 })();

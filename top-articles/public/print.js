@@ -1,9 +1,14 @@
 function printToPage(articles) {
+
+  // Removes all items from wrapper to reprint.
   let articleWrapper = document.getElementById('articleContainer');
   articleWrapper.textContent = "";
-  let resultTitle = document.getElementById('results');
-  resultTitle.textContent = `${articles.length} results for '${articles[0].section}'`; // Assuming section is the same for all articles
 
+  // Dynamically print section tag in results title / possibility that section is set as blank...
+  let resultTitle = document.getElementById('results');
+  resultTitle.textContent = `${articles.length} results for '${articles[0].section}'`;
+
+  // loop through each article retrieved, create cards and then append it to the articleWrapper
   articles.forEach(data => {
     let wrapper = document.createElement('div');
     wrapper.classList.add('results__container-item');
@@ -13,6 +18,7 @@ function printToPage(articles) {
 
     let img = document.createElement('img');
     if(data.media) {
+      // if media, all media data to img tag, else skip.
       img.setAttribute('src', data.media.url);
       img.setAttribute('alt', data.media.alt);
     }
