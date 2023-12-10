@@ -3,6 +3,13 @@ let orderByNewest = true;
 
 (() => {
   window.addEventListener('load', (event) => {
+    const app = feathers();
+    const restClient = feathers.rest();
+
+    app.configuration(restClient.fetch.bind)
+
+
+
     // Filter Article Topic
     const FAT = document.getElementById('filterArticleTopic');
     // Filter Article Order
